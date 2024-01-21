@@ -1,11 +1,20 @@
 
-let computerVictory;
-let playerVictory;
+let computerVictory = 0;
+let playerVictory = 0;
+let amountOfLooping = 5;
 
-let userInput = prompt("Choose Rock paper or scissors.");
 
+for (let index = 0; index < amountOfLooping; index++) {
+    let userInput = prompt("Choose Rock paper or scissors.");
+    WhoWon(userInput.toLocaleLowerCase());
+    if(index > 5){
+        console.log("Game Score");
+        console.log("Computer:" + computerVictory);
+        console.log("You:" + playerVictory);
+    }
+    
+}
 
-WhoWon(userInput.toLocaleLowerCase());
         
     
 
@@ -16,6 +25,7 @@ function WhoWon(playerInput){
     const answer = ComputerSelection()
     if(playerInput === answer){
         console.log("Tie");
+        amountOfLooping++;
 
     }else if(playerInput != answer){
 
@@ -23,20 +33,20 @@ function WhoWon(playerInput){
         
         case "scissor":
             if(answer == "paper")
-            {console.log(`You Won! ${playerInput} beats ${answer}!`)}
-            else if(answer =="rock"){console.log(`You Lose! ${answer} beats ${playerInput}!`)}
+            {console.log(`You Won! ${playerInput} beats ${answer}!`); playerVictory++;}
+            else if(answer =="rock"){console.log(`You Lose! ${answer} beats ${playerInput}!`); computerVictory++; }
             break;
 
         case "rock":
             if(answer == "scissor")
-            {console.log(`You Won! ${playerInput} beats ${answer}!`)}
-            else if(answer =="paper"){console.log(`You Lose! ${answer} beats ${playerInput}!`)}
+            {console.log(`You Won! ${playerInput} beats ${answer}!`); playerVictory++;}
+            else if(answer =="paper"){console.log(`You Lose! ${answer} beats ${playerInput}!`); computerVictory++;}
             break;
 
         case "paper":
             if(answer == "rock")
-            {console.log(`You Won! ${playerInput} beats ${answer}!`)}
-            else if(answer =="scissor"){console.log(`You Lose! ${answer} beats ${playerInput}!`)}
+            {console.log(`You Won! ${playerInput} beats ${answer}!`); playerVictory++;}
+            else if(answer =="scissor"){console.log(`You Lose! ${answer} beats ${playerInput}!`); computerVictory++;}
             break;
     }
 }
