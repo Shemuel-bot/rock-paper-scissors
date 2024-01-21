@@ -3,7 +3,6 @@ let computerVictory = 0;
 let playerVictory = 0;
 let amountOfLooping = 5;
 
-
 for (let index = 0; index < amountOfLooping; index++) {
     let userInput = prompt("Choose Rock paper or scissors.");
     WhoWon(userInput.toLocaleLowerCase());
@@ -11,16 +10,8 @@ for (let index = 0; index < amountOfLooping; index++) {
         console.log("Game Score");
         console.log("Computer:" + computerVictory);
         console.log("You:" + playerVictory);
-    }
-    
+    } 
 }
-
-        
-    
-
-
-
-
 function WhoWon(playerInput){
     const answer = ComputerSelection()
     if(playerInput === answer){
@@ -52,7 +43,6 @@ function WhoWon(playerInput){
 }
 
 }
-
 function ComputerSelection(){
     switch(Math.floor(Math.random() * 3) + 1){
         case 1: 
