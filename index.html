@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="rock-paper-scissor.js"></script>
+    <script src="rock-paper-scissor.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <title>Rock, Paper, Scissor</title>
 </head>
 <body>
     <div id="image-input">
         
-        <img src="Images/paper.jpg" class="paper" height="400px" width="400px" alt="image of paper">
-        <img src="Images/rock.jpg"  class="rock" height="400px" width="400px"   alt="image of rock">
-        <img src="Images/scissor.jpg" class="scissor" height="400px" width="400px"  alt="image of scissor">
-
-        <div id="input-result">
-         <input type="text"> <button>Play</button>
-         <p></p>
+        <div  class="image-group">
+        <img src="Images/paper.jpg" height="400px" width="400px" alt="image of paper">
+        <button class="paper">Paper</button>
         </div>
+        <div class="image-group">
+        <img src="Images/rock.jpg"   height="400px" width="400px"   alt="image of rock">
+        <button class="rock">Rock</button>
+        </div>
+        <div class="image-group">
+        <img src="Images/scissor.jpg"  height="400px" width="400px"  alt="image of scissor">
+        <button class="scissor">Scissor</button>
+        </div>
+         <p>Play</p>
+       
         
     </div>
 </body>
