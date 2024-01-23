@@ -6,10 +6,11 @@ const buttons = document.querySelectorAll('button');
 const resultText = document.querySelector('p');
 
 
-    buttons.addEventListener('click', ()=>{
-        console.log('hi')
-        WhoWon(element.className);
-    })
+   for (let index = 0; index < buttons.length; index++) {
+                buttons[index].addEventListener('click', ()=>{
+                    WhoWon(buttons[index].className);
+                })
+   }
 
 
 
@@ -21,20 +22,25 @@ function WhoWon(playerSelection){
     }else{
         switch (playerSelection) {
             case 'rock':
-                    if (result === "scissor")  {resultText.textContent = `${playerSelection} beats ${result}`; playerVictory++;}
-                    else {resultText.textContent = `${result} beats ${playerSelection}`; computerVictory++;}
+                    if (result === "scissor")  {resultText.textContent = `You Win! ${playerSelection} beats ${result}`; playerVictory++;}
+                    else {resultText.textContent = `You Lose! ${result} beats ${playerSelection}`; computerVictory++;}
                 break;
         
             case 'paper':
-                if (result === "rock")  {resultText.textContent = `${playerSelection} beats ${result}`; playerVictory++;}
-                else {resultText.textContent = `${result} beats ${playerSelection}`; computerVictory++;}
+                if (result === "rock")  {resultText.textContent = `You Win!${playerSelection} beats ${result}`; playerVictory++;}
+                else {resultText.textContent = `You Lose! ${result} beats ${playerSelection}`; computerVictory++;}
                 break;
 
             case 'scissor':
-                if (result === "paper")  {resultText.textContent = `${playerSelection} beats ${result}`; playerVictory++;}
-                    else {resultText.textContent = `${result} beats ${playerSelection}`; computerVictory++;}
+                if (result === "paper")  {resultText.textContent = `You Win! ${playerSelection} beats ${result}`; playerVictory++;}
+                    else {resultText.textContent = `You Lose! ${result} beats ${playerSelection}`; computerVictory++;}
                     break;
         }
+    }
+    if(computerVictory >= 3 || playerVictory >= 3){
+        resultText.textContent = `computer score: ${computerVictory}, player score: ${playerVictory}`
+        computerVictory = 0;
+        playerVictory = 0;
     }
 }
 
